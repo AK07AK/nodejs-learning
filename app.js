@@ -1,6 +1,13 @@
-var logger = require('./logger');
-logger.logg("msg");
+const Logger = require('./logger');
+const logger = new Logger();
 
-const fs = require('fs');
-const files = fs.readdirSync('./');
-console.log(files);
+//Register event 
+logger.on('messageHi',function(message){
+    console.log("message from"+message);
+});
+
+
+
+logger.log('message');
+
+
