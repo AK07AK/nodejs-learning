@@ -3,4 +3,4 @@ function log(messgae)
 {
     console.log("this is log");
 }
-module.export.log = log;
+module.exports.logg = log;
