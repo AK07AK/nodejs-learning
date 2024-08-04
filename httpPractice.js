@@ -1,12 +1,15 @@
 const http = require('http');
-
-const server = http.createServer();
-var count=0;
-server.on('connection',(socket)=>{
-    count++;
-    console.log("New Connection user .... "+count);
+const server = http.createServer((request,response)=>{
+    if(request.url === '/')
+    {
+        response.write('Your code is working dudeeeeeeeeee');
+        response.end();
+    }
+    if(request.url=='/courses')
+    {
+        response.write("this is course section");
+        response.end();
+    }
 });
-
 server.listen(3000);
-
-console.log('Listening on port 3000.....');
+console.log('listening ...........');
